@@ -18,7 +18,7 @@ import { CheckboxModule } from 'primeng/checkbox';
   currentCheckboxState = false;
   checkboxStateChanged(e: any){
     this.currentCheckboxState = e.checked;
-    console.log(e);
+    console.log(e);//
   }
 ```
 

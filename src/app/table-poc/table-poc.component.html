@@ -1,0 +1,47 @@
+<p>table-poc works!</p>
+
+<h5>Learning Objective</h5>
+<ul>
+    <li>Create a table with dynamic col defn : define data type and width as well</li>
+    <li>Enable Sorting properly for text, date and number cols</li>
+    <li>Enable pagination</li>
+</ul>
+
+<div>By default the font-size is 16px. Primeng take 1rem unit to size it's icons and other header labels. I feel it is
+    quite large.
+    So I reset the the font-size of html to 12px.
+</div>
+<p></p>
+
+<p-table #dt1 [columns]="cols" [value]="rows" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="caption">
+        <span>Simple Table(Paginator Enabled)</span>
+        <div class="p-inputgroup">
+            <input #globalFilterInput type="text" placeholder="Global Filter" (input)="applyGlobalFilter($event)">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-search"></i>
+            </span>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns let-rowData>
+        <tr>
+            <th style="width: 40px;">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th *ngFor="let col of columns" [pSortableColumn]="col.field" [ngStyle]="{width: col.width}">
+                {{col.header}}
+                <p-sortIcon [field]="col.field"></p-sortIcon>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns" let-rowIndex="rowIndex">
+        <tr [pSelectableRow]="rowData" [pSelectableRowIndex]="rowIndex">
+            <td style="width: 40px;">
+                <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+            </td>
+            <td *ngFor="let col of columns" [ngStyle]="{width: col.width}">
+                {{rowData[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

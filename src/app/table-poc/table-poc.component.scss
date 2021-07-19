@@ -1,0 +1,10 @@
+::ng-deep .p-datatable .p-datatable-header {
+    display: flex;
+    justify-content: space-between;
+
+    .p-inputgroup {
+        display: inline-flex;
+        align-items: stretch;
+        width: auto;
+    }
+}

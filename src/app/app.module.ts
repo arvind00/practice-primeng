@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PRIME_MODULES } from './prime';
 import { CheckboxPocComponent } from './checkbox-poc/checkbox-poc.component';
+import { TablePocComponent } from './table-poc/table-poc.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CheckboxPocComponent
+    CheckboxPocComponent,
+    TablePocComponent
   ],
   imports: [
     BrowserModule,

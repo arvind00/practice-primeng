@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CheckboxPocComponent } from './checkbox-poc/checkbox-poc.component';
+import { TablePocComponent } from './table-poc/table-poc.component';
 
 const routes: Routes = [
-  { path: '', component: CheckboxPocComponent, pathMatch: 'full' }
+  { path: '', component: TablePocComponent, pathMatch: 'full' },
+  { path: '', component: CheckboxPocComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
